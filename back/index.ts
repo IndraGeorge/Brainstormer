@@ -11,13 +11,18 @@ const openai = new OpenAIApi(configOpenai )
 // Using OpenAI API
 
 try{
-const response = async () => {
-    await openai.createEdit({
-        model: "text-davinci-edit-001",
-        instruction:"Brainstormer une idée ou un défi"
+const response = await openai.createChatCompletion
+    ({
+        model: "gpt-3.5-turbo",
+        messages:[
+            {role: "system", content: `Tu es un assistant de brainstorming qui utilise l'intelligence
+             artificielle pour générer des idées créatives et inspirantes.`},
+            {role: "user", content: "créer une marque de maquillage"}
+        ]
     }) 
-    console.log(response.data.choices[0].text);
-}
+   
+    console.log(response.data.choices[0].message);
+
 }catch(error: any){
     if (error.response) {
         console.log(error.response.status);

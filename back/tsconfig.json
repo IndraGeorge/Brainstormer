@@ -2,13 +2,19 @@
     "compilerOptions": {
       "outDir": "dist",
       "target": "ES2022",
-      "module": "commonjs",
+      "module": "ESNext",
       "moduleResolution": "node",
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
       "sourceMap": true,
-      "noImplicitAny": true
+      "noImplicitAny": true,
+      "esModuleInterop": true
     },
-    "include": ["**/*"]
+    "ts-node":{
+      "esm": true
+    },
+  
+    "include": ["**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
   }
   
