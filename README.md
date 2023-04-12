@@ -7,7 +7,6 @@ specific objectives.
 ### Library
 
 ReactJS\
-ExpressJS
 
 ### API
 
