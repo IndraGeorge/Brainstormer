@@ -8,7 +8,7 @@ export function App() {
 
   async function generateIdea() {
 
-    const prompt = `Génère une idée de projet ou de défi original en une phrase lié à : ${idea} `;
+    const prompt = `Donne moi une idée de projet ou de défi en une phrase lié à : ${idea} `;
 
     await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -19,7 +19,9 @@ export function App() {
       body: JSON.stringify({
         messages: [
           { role: "user", content: prompt },
-          { role: "system", content: "Tu es un assistant de brainstoming" }
+          {
+            role: "system", content: `Tu es un assistant de brainstorming qui génère
+           des idées créatives et inspirantes.` }
         ],
         max_tokens: 100,
         model: "gpt-3.5-turbo",
