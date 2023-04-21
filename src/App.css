@@ -37,7 +37,13 @@ button:hover {
   background-color: #45a049;
 }
 
-#response {
+.response {
+  margin-top: 20px;
+  font-size: 2rem;
+  color:#fff;
+}
+
+.loader{
   margin-top: 20px;
   font-size: 2rem;
   color:#fff;
