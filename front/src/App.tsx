@@ -12,30 +12,17 @@ export function App() {
 
     setLoading(true)
 
-    const prompt = `Proposez une idée de projet ou de défi original en une seule phrase, liée à ${idea},
-     en prenant en compte les critères suivants : qu'elle soit claire, concise et stimulante.`;
-
-    await fetch("https://api.openai.com/v1/chat/completions", {
+    await fetch("http://localhost:3000/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_KEY}`,
+        Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
       },
-      body: JSON.stringify({
-        messages: [
-          { role: "user", content: prompt },
-          {
-            role: "system", content: `Tu es un assistant de brainstorming qui génère
-          des idées créatives et inspirantes.` }
-        ],
-        max_tokens: 100,
-        model: "gpt-3.5-turbo",
-      })
+
     })
       .then((response) => response.json())
       .then((response) => {
-        const newIdea = response.choices[0].message.content
-        setIdeas(newIdea)
+        setIdeas(response)
         setLoading(false)
         setIdea("")
       })
@@ -56,12 +43,21 @@ export function App() {
     setIdea(e.target.value)
   }
 
+  const handleClick = () => {
+    if (idea === "") {
+      setIdeas("")
+      alert("Veuillez saisir votre projet")
+    } else {
+      generateIdea()
+    }
+  }
+
   return (
     <div className="container">
       <h1>Brainstormer</h1>
       <p>Entrer votre projet ou défi:</p>
       <input type="text" value={idea} onChange={handleChange} />
-      <button onClick={generateIdea}>Générer une idée</button>
+      <button onClick={handleClick}>Générer une idée</button>
       {loading ? <Loader /> : <div className="response">{ideas}</div>}
     </div>
   )
