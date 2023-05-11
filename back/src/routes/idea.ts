@@ -1,5 +1,6 @@
 import express from 'express';
-import { setIdea, getIdea } from '../controllers/post.controller';
+import { setIdea } from '../controllers/post.controller';
+import { getIdea } from '../controllers/get.controller';
 const router = express.Router();
 
 router.get('/', getIdea);

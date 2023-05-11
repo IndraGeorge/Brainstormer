@@ -10,32 +10,24 @@ export function App() {
 
   async function generateIdea() {
 
-    setLoading(true)
-
-    await fetch("http://localhost:3000/", {
+    const response = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
       },
+      body: JSON.stringify({ idea: idea })
+    }
 
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        setIdeas(response)
+    setLoading(true)
+
+    await fetch("http://localhost:3000/api/idea", response)
+      .then((res) => res.json())
+      .then((data) => {
+        setIdeas(data.response)
         setLoading(false)
-        setIdea("")
       })
-
-      .catch((error: any) => {
-        if (error.response) {
-          console.log(error.response.status);
-          console.log(error.response.data);
-        } else {
-          console.log(error.message);
-        }
-        setIdea("")
-        setIdeas("Oups! Une erreur est survenue :(")
+      .catch((err) => {
+        console.log(err)
       })
   }
 
@@ -56,7 +48,7 @@ export function App() {
     <div className="container">
       <h1>Brainstormer</h1>
       <p>Entrer votre projet ou défi:</p>
-      <input type="text" value={idea} onChange={handleChange} />
+      <input type="text" value={idea} onChange={handleChange} name="idea" />
       <button onClick={handleClick}>Générer une idée</button>
       {loading ? <Loader /> : <div className="response">{ideas}</div>}
     </div>
