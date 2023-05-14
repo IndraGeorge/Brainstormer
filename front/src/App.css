@@ -9,7 +9,7 @@ h1 {
   color:#fff;
 }
 
-p {
+h2 {
   font-size: 1.5rem;
   color:#fff;
 }
@@ -24,7 +24,7 @@ input {
 }
 
 button {
-  background-color: #4CAF50;
+  background: #227093 ;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -34,7 +34,8 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background:#0a3d62 ;
+  transition:300ms;
 }
 
 .response {
@@ -49,3 +50,18 @@ button:hover {
   color:#fff;
 }
 
+@media only screen and (max-width:700px){
+
+  h1{
+    font-size:2.4rem;
+  }
+
+  p{
+    font-size:1.3rem;
+  }
+
+  .response{
+    font-size:1.5rem;
+  }
+  
+}

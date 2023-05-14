@@ -23,7 +23,7 @@ export function App() {
     await fetch("http://localhost:3000/api/idea", response)
       .then((res) => res.json())
       .then((data) => {
-        setIdeas(data.response)
+        setIdeas(data.response.replace('/\'|\"/', ""))
         setLoading(false)
       })
       .catch((err) => {
@@ -47,8 +47,8 @@ export function App() {
   return (
     <div className="container">
       <h1>Brainstormer</h1>
-      <p>Entrer votre projet ou défi:</p>
-      <input type="text" value={idea} onChange={handleChange} name="idea" />
+      <h2>Entrer votre projet ou défi:</h2>
+      <input type="text" value={idea} aria-label="search" onChange={handleChange} name="idea" />
       <button onClick={handleClick}>Générer une idée</button>
       {loading ? <Loader /> : <div className="response">{ideas}</div>}
     </div>
