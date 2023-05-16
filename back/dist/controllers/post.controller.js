@@ -13,14 +13,20 @@ const configuration = new openai_1.Configuration({
 const openai = new openai_1.OpenAIApi(configuration);
 // Setting up the connection to OpenAI API
 const setIdea = async (req, res) => {
+    const regex = new RegExp("^[a-zA-Z0-9éèîëïäöüùçâà .',-]+$");
+    const idea = req.body.idea;
     try {
-        if (!req.body.idea) {
+        if (!idea) {
             res.status(400).json({
                 message: " Merci d'ajouter une requête",
             });
         }
+        else if (!regex.test(idea)) {
+            res.status(400).json({
+                message: 'Veuillez vérifier la validité de votre requête',
+            });
+        }
         else {
-            const idea = req.body.idea;
             const prompt = `${process.env.VITE_PROMPT} ${idea}, ${process.env.VITE_PROMPT_2}`;
             const completion = await openai.createChatCompletion({
                 model: 'gpt-3.5-turbo',

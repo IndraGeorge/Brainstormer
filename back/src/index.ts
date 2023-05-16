@@ -1,10 +1,16 @@
 import express from 'express';
 import http from 'http';
 import { Request, Response } from 'express';
+import helmet from 'helmet';
+import router from './routes/idea';
+import max from './middleware/limiter';
 
 const port = 3000;
 const app = express();
 const server = http.createServer(app);
+
+// Secure http headers
+app.use(helmet());
 
 // htttp request
 app.use((req: Request, res: Response, next) => {
@@ -21,8 +27,10 @@ app.use((req: Request, res: Response, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(max);
+
 // Routes API
-app.use('/api/idea', require('./routes/idea'));
+app.use('/api/idea', router);
 
 // start the server
 server.listen(port, () => {

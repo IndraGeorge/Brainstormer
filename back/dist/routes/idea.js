@@ -9,4 +9,4 @@ const get_controller_1 = require("../controllers/get.controller");
 const router = express_1.default.Router();
 router.get('/', get_controller_1.getIdea);
 router.post('/', post_controller_1.setIdea);
-module.exports = router;
+exports.default = router;

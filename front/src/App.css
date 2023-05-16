@@ -6,7 +6,9 @@
 
 h1 {
   font-size: 3rem;
-  color:#fff;
+  background: linear-gradient(270deg, #fc466b,#227093 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -24,17 +26,19 @@ input {
 }
 
 button {
-  background: #227093 ;
+  background: linear-gradient(198deg, #fc466b,#227093 );
   color: white;
+  font-weight:bold;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0px 1px 4px #227093;
 }
 
 button:hover {
-  background:#0a3d62 ;
+  background:#227093 ;
   transition:300ms;
 }
 
