@@ -1,6 +1,5 @@
-import React from "react";
 
-export function Welcome() {
+function Welcome() {
     return (
         <div className="bloc-welcome">
             <div className="welcome">Brainstormer</div>
@@ -9,4 +8,5 @@ export function Welcome() {
     )
 }
 
+export default Welcome
 

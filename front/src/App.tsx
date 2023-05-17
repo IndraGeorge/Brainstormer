@@ -31,6 +31,7 @@ export function App() {
         setIdeas("Oups, une erreur est survenue !")
         console.log(err)
       })
+
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
