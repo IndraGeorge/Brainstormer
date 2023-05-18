@@ -5,7 +5,7 @@ import helmet from 'helmet';
 import router from './routes/idea';
 import max from './middleware/limiter';
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 const server = http.createServer(app);
 
@@ -28,6 +28,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(max);
+
+app.get('/', (req: Request, res: Response) => {
+     res.json('Hello heroku');
+});
 
 // Routes API
 app.use('/api/idea', router);

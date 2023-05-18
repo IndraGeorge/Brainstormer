@@ -8,7 +8,7 @@ const http_1 = __importDefault(require("http"));
 const helmet_1 = __importDefault(require("helmet"));
 const idea_1 = __importDefault(require("./routes/idea"));
 const limiter_1 = __importDefault(require("./middleware/limiter"));
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
 // Secure http headers
@@ -24,6 +24,9 @@ app.use((req, res, next) => {
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(limiter_1.default);
+app.get('/', (req, res) => {
+    res.json('Hello heroku');
+});
 // Routes API
 app.use('/api/idea', idea_1.default);
 // start the server
