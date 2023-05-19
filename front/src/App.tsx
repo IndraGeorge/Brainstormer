@@ -20,7 +20,7 @@ export function App() {
 
     setLoading(true)
 
-    await fetch("http://localhost:3000/api/idea", response)
+    await fetch("https://murmuring-ocean-81159.herokuapp.com/api/idea", response)
       .then((res) => res.json())
       .then((data) => {
         setIdeas(data.response.replace('/\'|\"/', ""))
