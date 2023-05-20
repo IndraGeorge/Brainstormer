@@ -602,6 +602,11 @@ execa@^5.0.0:
     signal-exit "^3.0.3"
     strip-final-newline "^2.0.0"
 
+express-favicon@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.npmjs.org/express-favicon/-/express-favicon-2.0.4.tgz#1b5217dcd797d2d4f82ea0f521a6b0089c566a8e"
+  integrity sha512-JDGzumJdwF+WcJf+qwyhdpF1yzducuMCxZa+G6hxR3hor7ae/1CqpAPj8FXCGaGtqBA6ExDMfeszjuYRw5GUuQ==
+
 express-rate-limit@^6.7.0:
   version "6.7.0"
   resolved "https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-6.7.0.tgz#6aa8a1bd63dfe79702267b3af1161a93afc1d3c2"

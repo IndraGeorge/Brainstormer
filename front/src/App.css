@@ -6,7 +6,7 @@
 
 h1 {
   font-size: 3rem;
-  background: linear-gradient(270deg, #fc466b,#227093 );
+  background: linear-gradient(160deg,#00ff86,#43d39a,#4aa7aa,#3d7eb7,#3b61c1,#4e4ec8,#5c37d0,#660bd7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -26,20 +26,23 @@ input {
 }
 
 button {
-  background: linear-gradient(198deg, #fc466b,#227093 );
+  background: linear-gradient(160deg,#00ff86,#43d39a,#4aa7aa,#3d7eb7,#3b61c1,#4e4ec8,#5c37d0,#660bd7);
   color: white;
-  font-weight:bold;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0px 1px 4px #227093;
+  font-size:16px;
+  box-shadow: 0px 2px 3px 1px #0000008c;
+  outline: none;
+  margin: 10px 0px;
+  transition:300ms;
+  /*box-shadow: 0px 1px 4px #227093;*/
 }
 
 button:hover {
-  background:#227093 ;
-  transition:300ms;
+  box-shadow: 0px 0px 0px 0px transparent;
 }
 
 .response {
@@ -69,3 +72,4 @@ button:hover {
   }
   
 }
+

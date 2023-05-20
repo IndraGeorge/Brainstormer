@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: Roboto,sans-serif;
+}
+
 body {
     background:#1B1F1E ;
 }
@@ -18,7 +24,7 @@ body {
 
 .welcome{
     font-size: 50px;
-    background: linear-gradient(270deg, #fc466b,#227093 );
+    background: linear-gradient(160deg,#00ff86,#43d39a,#4aa7aa,#3d7eb7,#3b61c1,#4e4ec8,#5c37d0,#660bd7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation:logo 2s linear;

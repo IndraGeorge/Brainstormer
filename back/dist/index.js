@@ -9,9 +9,11 @@ const helmet_1 = __importDefault(require("helmet"));
 const idea_1 = __importDefault(require("./routes/idea"));
 const limiter_1 = __importDefault(require("./middleware/limiter"));
 const cors_1 = __importDefault(require("cors"));
+const express_favicon_1 = __importDefault(require("express-favicon"));
 const port = process.env.PORT || 3000;
 const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
+app.use((0, express_favicon_1.default)(__dirname + '/assets/favicon.png'));
 // Secure http headers
 app.use((0, helmet_1.default)());
 // Middleware that processes the request data

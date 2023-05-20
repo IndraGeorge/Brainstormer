@@ -5,10 +5,13 @@ import helmet from 'helmet';
 import router from './routes/idea';
 import max from './middleware/limiter';
 import cors from 'cors';
+import favicon from 'express-favicon';
 
 const port = process.env.PORT || 3000;
 const app = express();
 const server = http.createServer(app);
+
+app.use(favicon(__dirname + '/assets/favicon.png'));
 
 // Secure http headers
 app.use(helmet());
