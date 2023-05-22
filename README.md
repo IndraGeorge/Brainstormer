@@ -1,13 +1,5 @@
-# App Brainstormer
+# Application Web de Brainstorming
 
-This application is an idea generation tool that helps users to
-generate creative and innovative ideas to solve problems or achieve
-specific objectives.
+Bienvenue dans l'application web de brainstorming ! Cette application vous permet de générer des idées créatives en utilisant l'intelligence artificielle fournie par l'API OpenAI. Elle est construite avec React.js pour le front-end et Node.js (Express) pour le back-end.
 
-### Library
-
-ReactJS
-
-### API
-
-OpenAIApi
+https://brainstormer-3532c.web.app/

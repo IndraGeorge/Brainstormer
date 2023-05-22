@@ -23,7 +23,7 @@ export function App() {
     await fetch("https://murmuring-ocean-81159.herokuapp.com/api/idea", response)
       .then((res) => res.json())
       .then((data) => {
-        setIdeas(data.response.replace('/\'|\"/', ""))
+        setIdeas(data.response.replace('/\'|\"/', null))
         setLoading(false)
       })
       .catch((err) => {
