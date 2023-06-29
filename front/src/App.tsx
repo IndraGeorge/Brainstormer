@@ -23,7 +23,7 @@ export function App() {
     await fetch("https://murmuring-ocean-81159.herokuapp.com/api/idea", response)
       .then((res) => res.json())
       .then((data) => {
-        setIdeas(data.response.replace('/\'|\"/', null))
+        setIdeas(data.response.replaceAll('/\'|\"/', null))
         setLoading(false)
       })
       .catch((err) => {
@@ -58,11 +58,11 @@ export function App() {
 
   return (
     <div className="container">
-      <h1>Brainstormer</h1>
+      <h1>Challenge Master</h1>
       <h2>Entrer votre projet ou défi:</h2>
       <form onSubmit={handleClick}>
         <input type="text" value={idea} aria-label="search" onChange={handleChange} name="idea" />
-        <button type="submit">Générer une idée</button>
+        <button type="submit">GÉNÉRER UNE IDÉE</button>
       </form>
       {loading ? <Loader /> : <div className="response">{ideas}</div>}
     </div>

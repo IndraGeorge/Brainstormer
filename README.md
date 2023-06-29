@@ -1,5 +1,5 @@
-# Application Web de Brainstorming
+# Application Web challenge master
 
-Bienvenue dans l'application web de brainstorming ! Cette application vous permet de générer des idées créatives en utilisant l'intelligence artificielle fournie par l'API OpenAI. Elle est construite avec React.js pour le front-end et Node.js (Express) pour le back-end.
+Bienvenue dans l'application web challenge master ! Cette application vous permet de générer des idées créatives en utilisant l'intelligence artificielle fournie par l'API OpenAI. Elle est construite avec React.js côté client et Node.js avec le framework express côté serveur.
 
-https://brainstormer-3532c.web.app/
+https://challengemaster.fr/

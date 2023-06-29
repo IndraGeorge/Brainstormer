@@ -8,46 +8,5 @@ body {
     background:#1B1F1E ;
 }
 
-.bloc-welcome{
-    background:#1B1F1E ;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    animation:visibility 0s ease-in 3s forwards;
-    z-index:2;
-}
-
-.welcome{
-    font-size: 50px;
-    background: linear-gradient(160deg,#00ff86,#43d39a,#4aa7aa,#3d7eb7,#3b61c1,#4e4ec8,#5c37d0,#660bd7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation:logo 2s linear;
-}   
-
-@keyframes visibility {
-    to {
-        display: none;
-        visibility: hidden;
-        width: 0;
-        height: 0;
-    }
-    
-}
-
-@keyframes logo {
-    0%{
-       opacity:0;
-    }
-    100%{
-        opacity:1;
-    }
-}
-
 
 
