@@ -23,8 +23,8 @@
     "openai": "^3.2.1"
   },
   "scripts": {
-    "dev": "NODE_ENV=production nodemon ./dist/index.js",
+    "dev": "set NODE_ENV=development && nodemon ./dist/index.js",
     "build": "tsup src/index.ts --format cjs --clean",
-    "start": "NODE_ENV=development node dist/index.js"
+    "start": "set NODE_ENV=production && node dist/index.js"
   }
 }
